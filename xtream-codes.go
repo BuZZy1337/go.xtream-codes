@@ -304,9 +304,9 @@ func (c *XtreamClient) getEPG(action, streamID string, limit int) ([]EPGInfo, er
 
 func (c *XtreamClient) sendRequest(action string, parameters url.Values) ([]byte, error) {
 	file := "player_api.php"
-	if action == "xmltv.php" {
-		file = action
-	}
+	//if action == "xmltv.php" {
+	//	file = action
+	//}
 	url := fmt.Sprintf("%s/%s?username=%s&password=%s", c.BaseURL, file, c.Username, c.Password)
 	if action != "" {
 		url = fmt.Sprintf("%s&action=%s", url, action)
